@@ -19,6 +19,7 @@
  * Use redis-cli to create a user - command is given as under
  > `HMSET user001 first_name "Munshi" last_name "Premchand" email "munshi.writer@bestone.com" phone "123456789"`
  * Search with user001 and other users to see the nuances and your POC is done.
+ * You can also create users at route `/user/add` and utilise it to create redis users
 
 ## To be noted
  * Redis is a great tool for caching and stuff in backend. It can use disk space as a pseudo db like utility

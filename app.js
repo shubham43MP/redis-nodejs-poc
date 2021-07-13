@@ -53,6 +53,28 @@ app.post('/user/search', function (req, res, next) {
   })
 })
 
+//Add User Page
+app.get('/user/add', function(req, res, next){
+  res.render('adduser')
+})
+
+//Process Add User Page
+app.post('/user/add', function(req, res, next){
+  let { id, first_name = '', last_name = '', email = '', phone = '' } = req.body
+  client.hmset(id, [
+    'first_name', first_name,
+    'last_name', last_name,
+    'email', email,
+    'phone', phone
+  ], function (err, reply) {
+    if(err){
+      console.log('Error occures', err)
+    }
+    console.log(reply)
+    res.redirect('/')
+  }
+)})
+
 
 // Purely backend
 
