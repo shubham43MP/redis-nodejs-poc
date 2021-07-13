@@ -4,7 +4,6 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const redis = require('redis')
-const { RSA_NO_PADDING } = require('constants')
 
 // Create Redis Client
 let client = redis.createClient()
